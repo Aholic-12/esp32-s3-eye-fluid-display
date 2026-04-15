@@ -1,0 +1,41 @@
+menu "Fluid Display Example Configuration"
+
+config FLUID_DISPLAY_SIMULATION
+    bool "Enable simulation mode (no hardware)"
+    default n
+    help
+      Enable simulation mode to test the fluid display without
+      actual hardware. This will use simulated accelerometer data
+      and a software-rendered display.
+
+config FLUID_DISPLAY_PARTICLE_COUNT
+    int "Maximum particle count"
+    default 360
+    min 180
+    max 600
+    help
+      Maximum number of fluid particles that can be displayed.
+      Higher values provide denser fluid visuals but also cost more CPU.
+
+config FLUID_DISPLAY_UPDATE_INTERVAL
+    int "Update interval (ms)"
+    default 30
+    min 10
+    max 100
+    help
+      Interval between fluid simulation updates in milliseconds.
+      Lower values provide smoother animation but use more power.
+
+config FLUID_DISPLAY_ACCEL_I2C_SDA
+    int "I2C SDA GPIO number"
+    default 4
+    help
+      GPIO number for I2C SDA pin connected to the accelerometer.
+
+config FLUID_DISPLAY_ACCEL_I2C_SCL
+    int "I2C SCL GPIO number"
+    default 5
+    help
+      GPIO number for I2C SCL pin connected to the accelerometer.
+
+endmenu
