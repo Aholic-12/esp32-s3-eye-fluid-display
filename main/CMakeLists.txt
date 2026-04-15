@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "lcd_driver.c"
+        "accelerometer.c"
+        "fluid_simulation.c"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        driver
+        esp_adc
+        esp_lcd
+        freertos
+)
